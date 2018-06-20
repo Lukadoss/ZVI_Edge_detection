@@ -207,6 +207,8 @@ public class GuiController {
                     break;
                 case 1:
                     a2.setVisible(true);
+                    if (rbp1.isSelected()) a4.setDisable(true);
+                    else a4.setDisable(false);
                     break;
                 case 2:
                     a3.setVisible(true);
@@ -222,8 +224,10 @@ public class GuiController {
         gr.selectedToggleProperty().addListener(observable -> {
             if (rbp1.isSelected()) {
                 cBoxLap.setDisable(false);
+                a4.setDisable(true);
             } else {
                 cBoxLap.setDisable(true);
+                a4.setDisable(false);
             }
 
             if (rbs1.isSelected()){
@@ -318,6 +322,8 @@ public class GuiController {
         a3.setVisible(false);
         a4.setVisible(true);
         a5.setVisible(false);
+
+        a4.setDisable(false);
         a4.setMinHeight(Region.USE_COMPUTED_SIZE);
         a4.setPrefHeight(Region.USE_COMPUTED_SIZE);
     }
